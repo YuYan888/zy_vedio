@@ -1,0 +1,7 @@
+*.md linguist-language=dart
+*.yml linguist-language=dart
+*.html linguist-language=dart
+*.js linguist-language=dart
+*.xml linguist-language=dart
+*.css linguist-language=dart
+*.cc linguist-language=dart
