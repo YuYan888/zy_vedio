@@ -17,17 +17,21 @@ class _VideoListState extends State<VideoList> {
     return Scaffold(
         body: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-            itemCount: 15,
+            // itemCount: 15,
+            itemCount: 9,
             itemBuilder: (context, index) {
               // 实际羡慕中， 通过dateList[index]取出url
               var url = 'https://sample-videos.com/video123/flv/240/big_buck_bunny_240p_10mb.flv';
               return GestureDetector(
-                child: AbsorbPointer(
+                child: AbsorbPointer(//吸收指针事件的小部件
                     absorbing: true,
                     child: VideoView(Player()
                       ..setCommonDataSource('asset/videos/test.flv', type: SourceType.asset, autoPlay: true))),
-                onTap: () async => await router.push(name: MCRouter.playerPage, arguments: url),
+                onTap: () async => await router.push(name: MCRouter.videoChewiePage, arguments: url),
+                // onTap: () async => await router.push(name: MCRouter.videoAppPage, arguments: url),
+                // onTap: () async => await router.push(name: MCRouter.playerPage, arguments: url),
               );
-            }));
+            })
+    );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class RightMenu {
 
   static Future showRightMenu(BuildContext context, dx, dy,

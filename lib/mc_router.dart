@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:zy_vedio/main.dart';
 import 'package:zy_vedio/player_page.dart';
 import 'package:zy_vedio/second_page.dart';
+import 'package:zy_vedio/video_app.dart';
+import 'package:zy_vedio/video_chewie.dart';
 
 import 'video_list.dart';
 
@@ -13,6 +15,10 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
   static const String secondPage = '/second';
   static const String playerPage = '/player';
   static const String videoListPage = 'video_list';
+  static const String videoAppPage = '/video';
+  static const String videoChewiePage = '/video_chewie';
+
+
 
   static const String key = 'key';
   static const String value = 'value';
@@ -90,6 +96,13 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
         break;
       case playerPage:
         page = PlayerPage(routeSettings.arguments?.toString() ?? '');
+        break;
+      case videoAppPage:
+        page = VideoApp('http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4');
+        break;
+      case videoChewiePage:
+        page = VideoChewie(url:'http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4',title: 'My cnm Page');
+
         break;
       case videoListPage:
         page = VideoList();

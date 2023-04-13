@@ -72,7 +72,7 @@ class _PlayerPageState extends State<PlayerPage> {
         savePath);
     print('downlaod : $savePath');
 
-    // final result = await ImageGallerySaver.saveFile(savePath);
-    // print(result);
+    final result = await ImageGallerySaver.saveFile(savePath);
+    print(result);
   }
 }

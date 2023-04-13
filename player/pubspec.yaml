@@ -13,6 +13,10 @@ dependencies:
 
   fijkplayer: ^0.10.1
 
+  chewie: ^1.4.0
+
+  video_player: ^2.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
