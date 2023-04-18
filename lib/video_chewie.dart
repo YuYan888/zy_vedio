@@ -175,14 +175,14 @@ class _VideoChewieDemoState extends State<VideoChewie> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: widget.title,
-      theme: AppTheme.light.copyWith(
+      theme: AppTheme.dark.copyWith(//白天模式或者黑暗模式
         platform: _platform ?? Theme.of(context).platform,
       ),
       home: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Column(
+        body: Column(  //柱
           children: <Widget>[
             Expanded(
               child: Center(
@@ -206,9 +206,9 @@ class _VideoChewieDemoState extends State<VideoChewie> {
               onPressed: () {
                 _chewieController?.enterFullScreen();
               },
-              child: const Text('Fullscreen'),
+              child: const Text('Fullscreen'),//全屏幕
             ),
-            Row(
+            Row(    //行
               children: <Widget>[
                 Expanded(
                   child: TextButton(
@@ -221,7 +221,7 @@ class _VideoChewieDemoState extends State<VideoChewie> {
                     },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 16.0),
-                      child: Text("Landscape Video"),
+                      child: Text("Landscape Video"),//横向视频
                     ),
                   ),
                 ),
@@ -261,7 +261,7 @@ class _VideoChewieDemoState extends State<VideoChewie> {
                     },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 16.0),
-                      child: Text("Portrait Video"),
+                      child: Text("Portrait Video"),////纵向视频
                     ),
                   ),
                 )
@@ -308,7 +308,7 @@ class _VideoChewieDemoState extends State<VideoChewie> {
                     },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 16.0),
-                      child: Text("Desktop controls"),
+                      child: Text("Desktop controls"),//桌面控件
                     ),
                   ),
                 ),

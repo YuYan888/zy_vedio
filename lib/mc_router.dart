@@ -6,8 +6,9 @@ import 'package:zy_vedio/player_page.dart';
 import 'package:zy_vedio/second_page.dart';
 import 'package:zy_vedio/video_app.dart';
 import 'package:zy_vedio/video_chewie.dart';
+import 'package:zy_vedio/video_list/controller/public_controller.dart';
 
-import 'video_list.dart';
+import 'video_list/video_list.dart';
 
 class MCRouter extends RouterDelegate<List<RouteSettings>>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<List<RouteSettings>> {
@@ -98,14 +99,14 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
         page = PlayerPage(routeSettings.arguments?.toString() ?? '');
         break;
       case videoAppPage:
-        page = VideoApp('http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4');
+        page = VideoApp(routeSettings.arguments?.toString() ?? '');
         break;
       case videoChewiePage:
-        page = VideoChewie(url:'http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4',title: 'My cnm Page');
+        page = VideoChewie(url:routeSettings.arguments?.toString() ?? '',title: 'My cnm Page');
 
         break;
       case videoListPage:
-        page = VideoList();
+        page = VideoList(PublicController());
         break;
       default:
         page = const Scaffold();

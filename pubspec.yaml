@@ -29,6 +29,10 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   image_gallery_saver: ^1.7.1
+
+  # 提供一种以平台无关一致的方式访问设备的文件系统，比如应用临时目录、文档目录等。
+  # 而且path_provider支持Android、iOS、Linux、MacOS、Windows。
+
   path_provider: ^2.0.13
   dio: ^5.0.1
   flutter:
@@ -37,9 +41,37 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  # 通过添加 cupertino_icons 依赖来使用苹果风格的一套图标：
   cupertino_icons: ^1.0.5
   player:
     path: player
+
+
+
+
+
+  # json_serializable JSON 解析方案
+  json_serializable: ^6.2.0
+  # 使用json_annotation创建数据模型
+  json_annotation: ^4.5.0
+
+  # 提供了一些用于生成文件的通用命令，这些命令中有的可以用于测试生成的文件，
+  # 有的可以用于对外提供这些生成的文件以及它们的源代码。
+  # 这个包提供了一种使用 Dart 代码生成文件的具体方法，而不必使用任何工具(如 pub)
+  build_runner:
+  # 本地存储数据
+  shared_preferences: ^2.0.15
+
+  # 资产管理Asset Management 比如配合flutter_gen_runner使用能有效管理assets资源
+  flutter_gen_runner: ^4.3.0
+
+  # flutter官方维护开发的一个本地图片选择的插件
+  image_picker: ^0.8.5+3
+
+  #getx框架
+  get: ^4.6.5
+
+
 
 dev_dependencies:
   flutter_test:

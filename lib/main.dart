@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
-    getFlutterInfo();
+    // getFlutterInfo();
   }
 
   Future<void> _incrementCounter() async {
@@ -126,11 +126,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Future<void> getFlutterInfo() async {
-    final Map<String, dynamic> map = {'name': 'flutter', 'version': '3.0.1', 'language': 'dart', 'android_api': 31};
-    String result = await _channel.invokeMethod('getFlutterInfo', map);
-    print('Method invoke result: $result');
-    print('map is : ${map['name']}');
-
-  }
+  // Future<void> getFlutterInfo() async {
+  //   final Map<String, dynamic> map = {'name': 'flutter', 'version': '3.0.1', 'language': 'dart', 'android_api': 31};
+  //   String result = await _channel.invokeMethod('getFlutterInfo', map);
+  //   print('Method invoke result: $result');
+  //   print('map is : ${map['name']}');
+  //
+  // }
 }
