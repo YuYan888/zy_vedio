@@ -42,4 +42,59 @@ class ServerData {
         "playCount": 88
     }
 ]""";
+
+  static String fetchPrivateFromServer() => """[
+    {
+        "title": "示例视频",
+        "url": "https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218093206z8V1JuPlpe.mp4",
+        "playCount": 88
+    },
+    {
+        "title": "示例视频",
+        "url": "https://stream7.iqilu.com/10339/article/202002/18/02319a81c80afed90d9a2b9dc47f85b9.mp4",
+        "playCount": 88
+    }
+]""";
+
+  static String fetchMarkFromServer() => """[
+    {
+        "title": "示例视频",
+        "url": "https://prod-streaming-video-msn-com.akamaized.net/b7014b7e-b38f-4a64-bd95-4a28a8ef6dee/113a2bf3-3a5f-45d4-8b6f-e40ce8559da3.mp4",
+        "playCount": 88
+    },
+    {
+        "title": "示例视频",
+        "url": "https://stream7.iqilu.com/10339/article/202002/17/4417a27b1a656f4779eaa005ecd1a1a0.mp4",
+        "playCount": 88
+    }
+]""";
+
+  static String fetchFavoriteFromServer() => """[
+    {
+        "title": "示例视频",
+        "url": "https://v-cdn.zjol.com.cn/277001.mp4",
+        "playCount": 88
+    },
+    {
+        "title": "示例视频",
+        "url": "https://prod-streaming-video-msn-com.akamaized.net/54cabe89-17bd-4116-8908-8501ebe48f6d/2e8ba8c7-a691-46d9-b5ae-d18050ce273a.mp4",
+        "playCount": 88
+    },
+    {
+        "title": "示例视频",
+        "url": "https://prod-streaming-video-msn-com.akamaized.net/6ea6a8be-4bdb-498c-a34a-6ce0b3c5fe81/06096b63-be6b-4ccc-a7d5-d6b488be6974.mp4",
+        "playCount": 88
+    },
+    {
+        "title": "示例视频",
+        "url": "https://stream7.iqilu.com/10339/article/202002/18/2fca1c77730e54c7b500573c2437003f.mp4",
+        "playCount": 88
+    },
+    {
+        "title": "示例视频",
+        "url": "https://prod-streaming-video-msn-com.akamaized.net/559310a7-dbb0-461c-a863-5cb758607af5/f0474526-90d0-4d3d-aaae-dd68f3f38b28.mp4",
+        "playCount": 88
+    }
+]""";
+
 }

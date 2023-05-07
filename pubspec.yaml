@@ -71,6 +71,8 @@ dependencies:
   #getx框架
   get: ^4.6.5
 
+  camera: ^0.10.4
+
 
 
 dev_dependencies:
@@ -97,6 +99,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - asset/images/
     - asset/images/play.png
     - asset/videos/test.flv
 

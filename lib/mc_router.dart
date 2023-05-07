@@ -2,12 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:zy_vedio/main.dart';
+import 'package:zy_vedio/page/mine_page/mine_page.dart';
+import 'package:zy_vedio/photo_picker.dart';
 import 'package:zy_vedio/player_page.dart';
 import 'package:zy_vedio/second_page.dart';
 import 'package:zy_vedio/video_app.dart';
 import 'package:zy_vedio/video_chewie.dart';
 import 'package:zy_vedio/video_list/controller/public_controller.dart';
 
+import 'gen/assets.gen.dart';
 import 'video_list/video_list.dart';
 
 class MCRouter extends RouterDelegate<List<RouteSettings>>
@@ -18,11 +21,19 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
   static const String videoListPage = 'video_list';
   static const String videoAppPage = '/video';
   static const String videoChewiePage = '/video_chewie';
+  static const String minePage = '/minePage';
+  static const String photoPicker = '/photo_picker';
 
 
 
   static const String key = 'key';
   static const String value = 'value';
+
+
+  static const String key_url = 'url';
+  static const String key_height = 'height';
+  static const String key_width = 'width';
+
 
   final List<Page> _pages = [];
 
@@ -88,6 +99,9 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
 
   MaterialPage _createPage(RouteSettings routeSettings) {
     Widget page;
+
+    var args = routeSettings.arguments;
+
     switch (routeSettings.name) {
       case mainPage:
         page = const MyHomePage(title: 'My Home Page');
@@ -108,6 +122,24 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
       case videoListPage:
         page = VideoList(PublicController());
         break;
+      case minePage:
+        page = MinePage();
+        break;
+      case photoPicker:
+        String? url;
+        String height = '';
+        String width = '';
+
+        if (args is Map<String, String>) {
+          url = args[MCRouter.key_url];
+          height = args[MCRouter.key_height] ?? height;
+          width = args[MCRouter.key_width] ?? width;
+        }
+        page = PhotoPickerPage(url ?? Assets.images.defaultPhoto.keyName);
+
+        break;
+
+
       default:
         page = const Scaffold();
     }

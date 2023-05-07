@@ -12,8 +12,49 @@ import 'package:flutter/widgets.dart';
 class $AssetImagesGen {
   const $AssetImagesGen();
 
+  /// File path: asset/images/add.png
+  AssetGenImage get add => const AssetGenImage('asset/images/add.png');
+
+  /// File path: asset/images/avatar.jpg
+  AssetGenImage get avatar => const AssetGenImage('asset/images/avatar.jpg');
+
+  /// File path: asset/images/clock.png
+  AssetGenImage get clock => const AssetGenImage('asset/images/clock.png');
+
+  /// File path: asset/images/close.png
+  AssetGenImage get close => const AssetGenImage('asset/images/close.png');
+
+  /// File path: asset/images/default_photo.png
+  AssetGenImage get defaultPhoto =>
+      const AssetGenImage('asset/images/default_photo.png');
+
+  /// File path: asset/images/edit.png
+  AssetGenImage get edit => const AssetGenImage('asset/images/edit.png');
+
+  /// File path: asset/images/flash_off.png
+  AssetGenImage get flashOff =>
+      const AssetGenImage('asset/images/flash_off.png');
+
+  /// File path: asset/images/flash_on.png
+  AssetGenImage get flashOn => const AssetGenImage('asset/images/flash_on.png');
+
+  /// File path: asset/images/gallery.png
+  AssetGenImage get gallery => const AssetGenImage('asset/images/gallery.png');
+
+  /// File path: asset/images/img.png
+  AssetGenImage get img => const AssetGenImage('asset/images/img.png');
+
+  /// File path: asset/images/img_1.png
+  AssetGenImage get img1 => const AssetGenImage('asset/images/img_1.png');
+
+  /// File path: asset/images/lock.png
+  AssetGenImage get lock => const AssetGenImage('asset/images/lock.png');
+
   /// File path: asset/images/play.png
   AssetGenImage get play => const AssetGenImage('asset/images/play.png');
+
+  /// File path: asset/images/rotate.png
+  AssetGenImage get rotate => const AssetGenImage('asset/images/rotate.png');
 }
 
 class $AssetVideosGen {

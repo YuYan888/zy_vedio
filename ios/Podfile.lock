@@ -1,5 +1,7 @@
 PODS:
   - BIJKPlayer (0.7.16)
+  - camera_avfoundation (0.0.1):
+    - Flutter
   - fijkplayer (0.10.1):
     - BIJKPlayer (~> 0.7.16)
     - Flutter
@@ -22,6 +24,7 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
   - fijkplayer (from `.symlinks/plugins/fijkplayer/ios`)
   - Flutter (from `Flutter`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
@@ -37,6 +40,8 @@ SPEC REPOS:
     - BIJKPlayer
 
 EXTERNAL SOURCES:
+  camera_avfoundation:
+    :path: ".symlinks/plugins/camera_avfoundation/ios"
   fijkplayer:
     :path: ".symlinks/plugins/fijkplayer/ios"
   Flutter:
@@ -58,6 +63,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BIJKPlayer: 4c5d66e5cb99ae5bade6f22a4fcc031722a81c64
+  camera_avfoundation: 3125e8cd1a4387f6f31c6c63abb8a55892a9eeeb
   fijkplayer: 5ecf78e80cb97eed64cc170b094a4f691d9b9691
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
