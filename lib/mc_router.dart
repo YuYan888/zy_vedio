@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:zy_vedio/page/login_page/login_page.dart';
 import 'package:zy_vedio/main.dart';
+import 'package:zy_vedio/page/camera_page/camera_page.dart';
 import 'package:zy_vedio/page/mine_page/mine_page.dart';
 import 'package:zy_vedio/photo_picker.dart';
 import 'package:zy_vedio/player_page.dart';
@@ -15,17 +17,18 @@ import 'video_list/video_list.dart';
 
 class MCRouter extends RouterDelegate<List<RouteSettings>>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<List<RouteSettings>> {
-  static const String mainPage = '/main';
+  // static const String mainPage = '/main';
+  static const String loginPage = '/login';
+
   static const String secondPage = '/second';
   static const String playerPage = '/player';
+  static const String cameraPage = '/camera';
+
   static const String videoListPage = 'video_list';
   static const String videoAppPage = '/video';
   static const String videoChewiePage = '/video_chewie';
   static const String minePage = '/minePage';
   static const String photoPicker = '/photo_picker';
-
-
-
   static const String key = 'key';
   static const String value = 'value';
 
@@ -40,7 +43,9 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
   late Completer<Object?> _boolResultCompleter;
 
   MCRouter() {
-    _pages.add(_createPage(const RouteSettings(name: mainPage, arguments: [])));
+    // _pages.add(_createPage(const RouteSettings(name: mainPage, arguments: [])));
+    _pages.add(_createPage(const RouteSettings(name: loginPage, arguments: [])));
+
   }
 
   @override
@@ -103,14 +108,20 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
     var args = routeSettings.arguments;
 
     switch (routeSettings.name) {
-      case mainPage:
-        page = const MyHomePage(title: 'My Home Page');
+      // case mainPage:
+      //   page = const MyHomePage(title: 'My Home Page'));
+      //   break;
+    case loginPage:
+        page = const LoginPage();
         break;
       case secondPage:
         page = SecondPage(params: routeSettings.arguments?.toString() ?? '');
         break;
       case playerPage:
         page = PlayerPage(routeSettings.arguments?.toString() ?? '');
+        break;
+      case cameraPage:
+        page = CameraPage();
         break;
       case videoAppPage:
         page = VideoApp(routeSettings.arguments?.toString() ?? '');

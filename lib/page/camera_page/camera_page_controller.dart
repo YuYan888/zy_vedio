@@ -2,6 +2,8 @@
 import 'package:get/get.dart';
 import 'package:camera/camera.dart';
 import 'package:zy_vedio/channel_util.dart';
+import 'package:zy_vedio/mc_router.dart';
+import 'package:zy_vedio/main.dart';
 
 class CameraPageController extends GetxController {
   CameraController? _cameraController;
@@ -31,7 +33,10 @@ class CameraPageController extends GetxController {
   set recording(bool recording) => _recording.value = recording;
 
   void onCloseTap() {
-    ChannelUtil.closeCamera();
+    // ChannelUtil.closeCamera();
+    // router.popRoute(params: path);
+    router.popRoute();
+
   }
 
 
@@ -43,23 +48,27 @@ class CameraPageController extends GetxController {
       print('MOOC: available camera : $value');
       _cameras = value;
       _initCameraController();
-
     });
+  }
 
-
+  void onSwitchCamera() {
+    if (_cameras.length > 1) {
+      cameraIndex = cameraIndex == 0 ? 1 : 0;
+      _initCameraController();
+    }
   }
 
   void _initCameraController() {
     print('MOOC: _initCameraController, cameraIndex: $cameraIndex');
     // 2、选择具体camera来创建camera controller
-    _cameraController = CameraController(_cameras[cameraIndex1], ResolutionPreset.max);
+    _cameraController = CameraController(_cameras[cameraIndex], ResolutionPreset.max);
 
     // 3、等待cameraController初始化
 
     _cameraController?.initialize().then((value) {
       print('MOOC: _initCameraController, refresh controller: $cameraIndex');
 
-      _cameraController.value = _cameraController;
+      _cameraControllerObs.value = _cameraController;
     }).catchError((Object e) {
         if (e is CameraException) {
           switch (e.code) {

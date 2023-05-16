@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:zy_vedio/main.dart';
 import 'package:zy_vedio/widget/t_image.dart';
+import 'package:zy_vedio/mc_router.dart';
 
 /// 职责：
 /// 1、展示完整的图片；
@@ -45,11 +46,13 @@ class PhotoPickerPage extends StatelessWidget {
                   style: TextStyle(color: Colors.white70,fontSize: 14,decoration: TextDecoration.none)),
               ),
               onTap: () async {
-                var pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
-                var path = pickedFile?.path;
-                if (path != null){
-                  router.popRoute(params: path);
-                }
+                // var pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+                // var path = pickedFile?.path;
+                // if (path != null){
+                //   router.popRoute(params: path);
+                // }
+
+                await router.push(name: MCRouter.cameraPage);
               },
             ),
           ),

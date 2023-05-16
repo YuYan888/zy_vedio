@@ -47,6 +47,10 @@ class $AssetImagesGen {
   /// File path: asset/images/img_1.png
   AssetGenImage get img1 => const AssetGenImage('asset/images/img_1.png');
 
+  /// File path: asset/images/img_applogo.png
+  AssetGenImage get imgApplogo =>
+      const AssetGenImage('asset/images/img_applogo.png');
+
   /// File path: asset/images/lock.png
   AssetGenImage get lock => const AssetGenImage('asset/images/lock.png');
 

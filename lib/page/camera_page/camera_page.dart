@@ -17,7 +17,7 @@ class CameraPage extends StatefulWidget {
 
 }
 
-class _CameraPageState extends State<CameraPage> {
+class _CameraPageStage extends State<CameraPage> {
 
 
   late CameraPageController _controller;
@@ -58,15 +58,13 @@ class _CameraPageState extends State<CameraPage> {
               padding: EdgeInsets.only(top: 35,right: 14),
               child: Column(
                 children: [
-                  _buildIcon(Assets.images.rotate.path, '翻转', () {
-                    _controller.onSwitchCamera()),
-
-                  }),
-                  SizedBox(height: 16),
-                  _buildIcon(Assets.images.clock.path,'倒计时', () => Future.delayed(Duration(seconds: 3), () {
-                    _controller.takePhotoAndUpload();
-                  })
-                  )
+                  // _buildIcon(Assets.images.rotate.path, '翻转', () {
+                  //   _controller.onSwitchCamera()),
+                  // });
+                _buildIcon(Assets.images.rotate.path, '翻转', () => _controller.onSwitchCamera()),
+              SizedBox(height: 16),
+                  _buildIcon(Assets.images.clock.path,'倒计时', () => Future.delayed(
+                      Duration(seconds: 3), () => _controller.takePhotoAndUpload())),
                   SizedBox(height: 16),
                   Obx(() => _buildIcon(_controller.flash ? Assets.images.flashOn.path : Assets.images.flashOn.path, '散光灯', () {
                     _controller.onSwitchFlash();
@@ -95,20 +93,47 @@ class _CameraPageState extends State<CameraPage> {
                   ],
                 ),
                 onTap: () async {
-                  var pickedFile = await ImagePicker().pickVideo(source: ImageSource.gallery);
+                  var pickedFile = await ImagePicker().pickVideo(
+                      source: ImageSource.gallery);
                   var path = pickedFile?.path;
                   if (path != null) {
                     print("zhanyu= upload picture: $path");
-                },
+                  }
+
+                }
               ),
             ),
-          )
+          ),
+          Align(
+             alignment: Alignment.bottomCenter,
+             child: Padding(
+              padding: EdgeInsets.only(bottom: 115),
+              child: GestureDetector(
+              onTap: () => _controller.takePhotoAndUpload(),
+                child: Obx(() => Container(
+                height: 75,
+                width: 75,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 17, horizontal: 22),
+                  child: TImage(Assets.images.flashOn.path,height: 33,width: 33),
+               ),
+               decoration: BoxDecoration(
+                 color: _controller.recording ? Colors.grey : Color(0xffff2c54),
+                 borderRadius: BorderRadius.all(Radius.circular(50)),
+                 border: Border.all(width: 4,color: Colors.white)
+    ),
+    )),
+    ),
+    ),
+    )
         ],
       ),
     );
 
   }
-  }
+
+
+/// 构建控制Button，图片+文本，垂直结构
 
   Widget _buildIcon(String iconPath, String title,GestureTapCallback? onTap) {
   return GestureDetector(
